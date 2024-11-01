@@ -28,6 +28,7 @@
 , go_1_23
 , buildGo123Module
 , nix-update-script
+, makeBinaryWrapper
 }:
 
 with python3Packages;
@@ -85,6 +86,7 @@ buildPythonApplication rec {
     go_1_23
     fontconfig
   ] ++ lib.optionals stdenv.hostPlatform.isDarwin [
+    makeBinaryWrapper
     imagemagick
     libicns  # For the png2icns tool.
   ] ++ lib.optionals stdenv.hostPlatform.isLinux [
