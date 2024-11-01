@@ -85,6 +85,7 @@ buildPythonApplication rec {
     go_1_23
     fontconfig
   ] ++ lib.optionals stdenv.hostPlatform.isDarwin [
+    makeBinaryWrapper
     imagemagick
     libicns  # For the png2icns tool.
   ] ++ lib.optionals stdenv.hostPlatform.isLinux [
